@@ -7,7 +7,8 @@ app = Flask(__name__)
 CORS(app)
 
 # URL ACTUALIZADA CON TU NUEVA CLAVE
-DB_URL = "postgresql://luis:DUQbdff_9SrVDgBNj2mziw@hearty-sphinx-14305.jxf.gcp-us-east1.cockroachlabs.cloud:26257/loligg?sslmode=verify-full"
+# Cambiamos sslmode a 'require' para que no pida el archivo root.crt
+DB_URL = "postgresql://luis:DUQbdff_9SrVDgBNj2mziw@hearty-sphinx-14305.jxf.gcp-us-east1.cockroachlabs.cloud:26257/loligg?sslmode=require"
 
 @app.route('/guardar', methods=['POST'])
 def guardar():
