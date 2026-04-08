@@ -1,0 +1,12 @@
+{
+  "name": "backend-godot-juego",
+  "version": "1.0.0",
+  "description": "API para conectar Godot con CockroachDB",
+  "main": "api/auth.js",
+  "dependencies": {
+    "pg": "^8.11.0"
+  },
+  "scripts": {
+    "start": "node api/auth.js"
+  }
+}
