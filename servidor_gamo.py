@@ -11,7 +11,8 @@ CORS(app)
 # Cambiamos sslmode a 'verify-full' y añadimos sslrootcert=system
 # Cambiamos sslmode a 'no-verify' para que CockroachDB no se ponga estricto
 # Esta versión apaga por completo la exigencia del certificado SSL
-DB_URL = "postgresql://luis:DUQbdff_9SrVDgBNj2mziw@hearty-sphinx-14305.jxf.gcp-us-east1.cockroachlabs.cloud:26257/loligg?sslmode=disable"
+# 'require' activa la encriptación necesaria sin pedir el archivo físico
+DB_URL = "postgresql://luis:DUQbdff_9SrVDgBNj2mziw@hearty-sphinx-14305.jxf.gcp-us-east1.cockroachlabs.cloud:26257/loligg?sslmode=require"
 
 @app.route('/guardar', methods=['POST'])
 def guardar():
