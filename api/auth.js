@@ -48,3 +48,13 @@ export default async function handler(req, res) {
         await client.end();
     }
 }
+
+
+if (accion === "registro") {
+    const { email, password, apodo } = req.body; // <--- Agregamos apodo aquí
+    await client.query(
+        'INSERT INTO usuarios (email, password, apodo) VALUES ($1, $2, $3)', 
+        [email, password, apodo]
+    );
+    return res.status(200).json({ mensaje: "¡Usuario registrado con éxito!" });
+}
